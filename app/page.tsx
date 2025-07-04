@@ -278,7 +278,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
               },
               {
                 title: "Privacy-First Local LLMs",
-                description: "Run everything locally with models like LLaMA 3.2 or Ollama—no cloud required, complete privacy.",
+                description: "Run everything locally with models like llama 3.2 or Ollama, no cloud required, complete privacy.",
                 icon: <Package className="w-5 h-5" />,
               },
             ].map((feature, index) => (
