@@ -248,40 +248,40 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Features</h2>
-            <p className="text-lg text-gray-400">Everything you need for professional documentation</p>
+            <p className="text-lg text-gray-400">AI-powered enhancements for professional Python documentation</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Automatic Parsing",
-                description: "Intelligently scans Python files and extracts docstrings, signatures, and definitions.",
-                icon: <Code className="w-5 h-5" />,
-              },
-              {
-                title: "Multiple Formats",
-                description: "Generate documentation in Markdown, HTML, or integrate with Sphinx and MkDocs.",
+                title: "Auto-Generated Summaries",
+                description: "Concise, AI-generated summaries for modules, classes, and functions.",
                 icon: <FileText className="w-5 h-5" />,
               },
               {
-                title: "Smart Search",
-                description: "Built-in search functionality with intelligent indexing for quick content discovery.",
+                title: "Code Explanations",
+                description: "Plain-English explanations of code logic, powered by LLMs.",
+                icon: <Book className="w-5 h-5" />,
+              },
+              {
+                title: "Semantic Search",
+                description: "Query your docs with natural language and find what you need instantly.",
                 icon: <Search className="w-5 h-5" />,
               },
               {
-                title: "Code Examples",
-                description: "Automatically generate practical usage examples from function signatures.",
+                title: "Automated Example Testing",
+                description: "Extracts, runs, and reports results for code examples in your docstrings.",
                 icon: <Zap className="w-5 h-5" />,
               },
               {
-                title: "Team Ready",
-                description: "Designed for teams with workflow integration and development tool compatibility.",
+                title: "Multilingual Documentation",
+                description: "Generate documentation in multiple languages using LLM translation.",
                 icon: <Users className="w-5 h-5" />,
               },
               {
-                title: "CLI Interface",
-                description: "Powerful command-line interface for build and deployment process integration.",
-                icon: <Terminal className="w-5 h-5" />,
+                title: "Privacy-First Local LLM Support",
+                description: "Run everything locally with models like LLaMA or Ollama—no cloud required.",
+                icon: <Package className="w-5 h-5" />,
               },
             ].map((feature, index) => (
               <motion.div
