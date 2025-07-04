@@ -183,9 +183,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
             </h1>
 
             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              <span className="text-blue-400 font-medium">AI-powered documentation for Python projects</span>.<br />
-              Key features: <span className="text-white">summaries</span>, <span className="text-white">code explanations</span>, <span className="text-white">semantic search</span>, <span className="text-white">automated example testing</span>, and <span className="text-white">multilingual docs</span>.<br />
-              <span className="text-gray-300">Requires a real LLM provider and model (local or cloud). Privacy-first local LLMs supported.</span>
+              AI-powered documentation that automatically generates summaries, explanations, examples, and more for your Python projects.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -255,32 +253,32 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
             {[
               {
                 title: "Auto-Generated Summaries",
-                description: "Concise, AI-generated summaries for modules, classes, and functions.",
+                description: "Intelligently creates concise summaries for modules, classes, and functions using advanced AI models.",
                 icon: <FileText className="w-5 h-5" />,
               },
               {
                 title: "Code Explanations",
-                description: "Plain-English explanations of code logic, powered by LLMs.",
+                description: "Converts complex code logic into plain-English explanations that anyone can understand.",
                 icon: <Book className="w-5 h-5" />,
               },
               {
                 title: "Semantic Search",
-                description: "Query your docs with natural language and find what you need instantly.",
+                description: "Search your documentation using natural language queries like 'find data processing functions'.",
                 icon: <Search className="w-5 h-5" />,
               },
               {
                 title: "Automated Example Testing",
-                description: "Extracts, runs, and reports results for code examples in your docstrings.",
+                description: "Extracts code examples from docstrings, runs them automatically, and reports results in your docs.",
                 icon: <Zap className="w-5 h-5" />,
               },
               {
                 title: "Multilingual Documentation",
-                description: "Generate documentation in multiple languages using LLM translation.",
+                description: "Generate documentation in multiple languages (English, French, Spanish, Chinese) using LLM translation.",
                 icon: <Users className="w-5 h-5" />,
               },
               {
-                title: "Privacy-First Local LLM Support",
-                description: "Run everything locally with models like LLaMA or Ollama—no cloud required.",
+                title: "Privacy-First Local LLMs",
+                description: "Run everything locally with models like LLaMA 3.2 or Ollama—no cloud required, complete privacy.",
                 icon: <Package className="w-5 h-5" />,
               },
             ].map((feature, index) => (
