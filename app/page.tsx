@@ -183,8 +183,9 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
             </h1>
 
             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Automatically parse your Python code and generate beautiful, comprehensive documentation. No configuration
-              needed.
+              <span className="text-blue-400 font-medium">AI-powered documentation for Python projects</span>.<br />
+              Key features: <span className="text-white">summaries</span>, <span className="text-white">code explanations</span>, <span className="text-white">semantic search</span>, <span className="text-white">automated example testing</span>, and <span className="text-white">multilingual docs</span>.<br />
+              <span className="text-gray-300">Requires a real LLM provider and model (local or cloud). Privacy-first local LLMs supported.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
