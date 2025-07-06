@@ -1,6 +1,6 @@
 # PyDocEnhancer Website
 
-Welcome to the official website for **PyDocEnhancer** — an AI-powered Python plugin that enhances your documentation with summaries, code explanations, examples, semantic search, automated example testing, and multilingual support.
+Welcome to the official website for **PyDocEnhancer** an AI-powered Python plugin that enhances your documentation with summaries, code explanations, examples, semantic search, automated example testing, and multilingual support.
 
 ## What is PyDocEnhancer?
 PyDocEnhancer is a powerful tool designed to supercharge your Python documentation using the latest AI models. It provides:
@@ -22,11 +22,11 @@ Here you can:
 
 ## Quick Links
 - **PyDocEnhancer on PyPI**: [https://pypi.org/project/pydocenhancer/](https://pypi.org/project/pydocenhancer/)
-- **PyDocEnhancer GitHub**: [https://github.com/AbdoullahNdao/PyDocEnhancer](https://github.com/AbdoullahNdao/PyDocEnhancer)
+- **PyDocEnhancer GitHub**: [https://github.com/utachicodes/PyDocEnhancer](https://github.com/utachicodes/PyDocEnhancer)
 
 ## Requirements & Installation
 - **Python 3.8+**
-- **Local LLM** (e.g., LLaMA 3.2 via ctransformers) recommended for privacy and performance
+- **Local LLM** (e.g., llama 3.2 via ctransformers) recommended for privacy and performance
 - **Sphinx or MkDocs** (optional, for integration)
 
 For most users, install with:
@@ -35,7 +35,7 @@ pip install pydocenhancer[local]
 ```
 This uses the ctransformers backend (no C++ build tools required on most platforms).
 
-For advanced backends (e.g., llama-cpp-python), see the [GitHub documentation](https://github.com/AbdoullahNdao/PyDocEnhancer#readme) for platform-specific instructions and troubleshooting.
+For advanced backends (e.g., llama-cpp-python), see the [GitHub documentation](https://github.com/utachicodes/PyDocEnhancer#readme) for platform-specific instructions and troubleshooting.
 
 ## LLM Requirement
 > **As of version 3.1.0, PyDocEnhancer requires a real LLM provider and model.**
@@ -45,13 +45,13 @@ For advanced backends (e.g., llama-cpp-python), see the [GitHub documentation](h
 ## Troubleshooting & Windows Support
 - No C++ build tools required for ctransformers wheels (`pip install pydocenhancer[local]`)
 - For llama-cpp-python backend, Visual Studio Build Tools are required (see GitHub for details)
-- Common errors and solutions are documented on the [GitHub Issues](https://github.com/AbdoullahNdao/PyDocEnhancer/issues) page
+- Common errors and solutions are documented on the [GitHub Issues](https://github.com/utachicodes/PyDocEnhancer/issues) page
 - Consider using [WSL](https://learn.microsoft.com/en-us/windows/wsl/) for easier native code compilation on Windows
 
 ## Documentation
 Full documentation, usage examples, and advanced configuration are available on:
 - This website (see navigation)
-- [PyDocEnhancer GitHub README](https://github.com/AbdoullahNdao/PyDocEnhancer#readme)
+- [PyDocEnhancer GitHub README](https://github.com/utachicodes/PyDocEnhancer#readme)
 
 ## License
 MIT © Abdoullah Ndao <abdoullahaljersi@gmail.com>
