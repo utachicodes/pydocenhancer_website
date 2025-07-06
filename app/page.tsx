@@ -320,16 +320,42 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
         </div>
       </section>
 
+      {/* Requirements Section */}
+      <section id="requirements" className="py-16 px-6 bg-gray-950 border-b border-gray-800">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Requirements</h2>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 text-left">
+            <div className="flex items-center gap-4">
+              <Package className="w-7 h-7 text-blue-400" />
+              <div>
+                <span className="font-semibold text-white">Python 3.8+</span>
+                <div className="text-gray-400 text-sm">Compatible with modern Python versions</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <Zap className="w-7 h-7 text-blue-400" />
+              <div>
+                <span className="font-semibold text-white">Local LLM</span>
+                <div className="text-gray-400 text-sm">e.g., LLaMA 3.2 via ctransformers backend</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <ExternalLink className="w-7 h-7 text-blue-400" />
+              <div>
+                <span className="font-semibold text-white">Optional: Sphinx or MkDocs</span>
+                <div className="text-gray-400 text-sm">For documentation integration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Installation Section with Modern Code Interface */}
       <section id="installation" className="py-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Quick Start</h2>
             <p className="text-lg text-gray-400">Get up and running in minutes</p>
-            <div className="mt-4 text-base text-blue-300 font-medium">
-              <span>LLM Requirement:</span> PyDocEnhancer requires a real LLM provider and model.<br />
-              <span className="text-gray-300">Specify a valid provider (e.g., <code>local</code> for ctransformers/Ollama, or <code>openai</code> for OpenAI API) and a model (e.g., <code>ollama/llama3.2:latest</code>). Mock mode is not supported.</span>
-            </div>
           </div>
 
           {/* Modern Code Interface */}
@@ -359,7 +385,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
               </div>
 
               {/* Tab Navigation */}
-              <div className="flex space-x-1 bg-gray-900/50 rounded-lg p-1">
+              <div className="flex flex-wrap justify-center gap-2 bg-gray-900/50 rounded-lg p-1">
                 {[
                   {
                     title: "Install (Recommended)",
@@ -413,21 +439,21 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                   <button
                     key={index}
                     onClick={() => setCurrentExample(index)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    className={`flex flex-col items-center space-y-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 shadow-sm border border-transparent ${
                       currentExample === index
-                        ? "bg-blue-600 text-white shadow-lg"
-                        : "text-gray-400 hover:text-white hover:bg-gray-800/50"
+                        ? "bg-blue-600 text-white shadow-lg border-blue-500"
+                        : "text-gray-400 hover:text-white hover:bg-gray-800/50 border-gray-800"
                     }`}
                   >
                     {example.icon}
-                    <span className="hidden sm:inline">{example.title}</span>
+                    <span className="mt-1">{example.title}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Code Content */}
-            <div className="p-6">
+            <div className="p-8 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 rounded-b-2xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentExample}
@@ -439,17 +465,64 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                   {/* Example Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{codeExamples[currentExample].title}</h3>
-                      <p className="text-sm text-gray-400">{codeExamples[currentExample].description}</p>
+                      <h3 className="text-xl font-semibold text-white mb-2 flex items-center gap-2">
+                        {[
+                          <Package className="w-5 h-5" />,
+                          <Package className="w-5 h-5" />,
+                          <Code className="w-5 h-5" />,
+                          <Terminal className="w-5 h-5" />,
+                          <FileText className="w-5 h-5" />,
+                          <Search className="w-5 h-5" />,
+                        ][currentExample]}
+                        {[
+                          "Install (Recommended)",
+                          "Install (llama-cpp-python)",
+                          "Python API Quick Start",
+                          "CLI: Generate Docs",
+                          "CLI: Generate README",
+                          "CLI: Search Docs",
+                        ][currentExample]}
+                      </h3>
+                      <p className="text-sm text-gray-400">{
+                        [
+                          "Install PyDocEnhancer with local LLM support (no C++ build tools required)",
+                          "Install with llama-cpp-python backend (requires C++ build tools on Windows)",
+                          "Generate docs, README, and search with the Python API",
+                          "Generate documentation with Ollama in English, with example testing",
+                          "Generate a project-level README from your codebase",
+                          "Search documentation with natural language",
+                        ][currentExample]
+                      }</p>
                     </div>
                     <button
                       onClick={() =>
-                        copyToClipboard(codeExamples[currentExample].code, codeExamples[currentExample].key)
+                        copyToClipboard([
+                          "pip install pydocenhancer[local]",
+                          "pip install pydocenhancer[llama]",
+                          `from pydocenhancer import DocEnhancer\n\n# Initialize with a real LLM (Ollama or LLaMA)\nenhancer = DocEnhancer(provider=\"local\", model=\"ollama/llama3.2:latest\", language=\"en\")\nenhancer.generate_docs(module_path=\"my_project/utils.py\", output_dir=\"docs\", language=\"en\")\n\n# Generate a README for your project\nenhancer.generate_readme(module_path=\"my_project/utils.py\", output_path=\"README.generated.md\", language=\"en\")\n\n# Search documentation\nresults = enhancer.search_docs(\"file handling functions\", \"docs\")\nprint(results)`,
+                          "pydocenhancer enhance --module my_project/utils.py --output docs/ --provider local --model ollama/llama3.2:latest --language en",
+                          "pydocenhancer generate-readme --module my_project/utils.py --output README.generated.md --provider local --model ollama/llama3.2:latest --language en",
+                          "pydocenhancer search --query \"data processing functions\" --docs-dir docs/",
+                        ][currentExample], [
+                          "install-local",
+                          "install-llama",
+                          "python-api",
+                          "cli-generate-docs",
+                          "cli-generate-readme",
+                          "cli-search",
+                        ][currentExample])
                       }
                       className="flex items-center space-x-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 text-sm font-medium"
                     >
                       <AnimatePresence mode="wait">
-                        {copiedStates[codeExamples[currentExample].key] ? (
+                        {copiedStates[[
+                          "install-local",
+                          "install-llama",
+                          "python-api",
+                          "cli-generate-docs",
+                          "cli-generate-readme",
+                          "cli-search",
+                        ][currentExample]] ? (
                           <motion.div
                             key="check"
                             initial={{ scale: 0 }}
@@ -477,9 +550,16 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                   </div>
 
                   {/* Code Block */}
-                  <div className="bg-black/50 rounded-xl p-6 border border-gray-800/50">
-                    <pre className="text-sm font-mono overflow-x-auto">
-                      <code className="text-blue-400 leading-relaxed">{codeExamples[currentExample].code}</code>
+                  <div className="bg-black/70 rounded-xl p-8 border border-blue-900/40 shadow-lg mt-2">
+                    <pre className="text-sm font-mono overflow-x-auto text-blue-300">
+                      <code>{[
+                        "pip install pydocenhancer[local]",
+                        "pip install pydocenhancer[llama]",
+                        `from pydocenhancer import DocEnhancer\n\n# Initialize with a real LLM (Ollama or LLaMA)\nenhancer = DocEnhancer(provider=\"local\", model=\"ollama/llama3.2:latest\", language=\"en\")\nenhancer.generate_docs(module_path=\"my_project/utils.py\", output_dir=\"docs\", language=\"en\")\n\n# Generate a README for your project\nenhancer.generate_readme(module_path=\"my_project/utils.py\", output_path=\"README.generated.md\", language=\"en\")\n\n# Search documentation\nresults = enhancer.search_docs(\"file handling functions\", \"docs\")\nprint(results)`,
+                        "pydocenhancer enhance --module my_project/utils.py --output docs/ --provider local --model ollama/llama3.2:latest --language en",
+                        "pydocenhancer generate-readme --module my_project/utils.py --output README.generated.md --provider local --model ollama/llama3.2:latest --language en",
+                        "pydocenhancer search --query \"data processing functions\" --docs-dir docs/",
+                      ][currentExample]}</code>
                     </pre>
                   </div>
 
@@ -487,13 +567,20 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                   <div className="flex items-center justify-between mt-6">
                     <div className="flex items-center space-x-2">
                       <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                        {codeExamples[currentExample].language}
+                        {[
+                          "bash",
+                          "bash",
+                          "python",
+                          "bash",
+                          "bash",
+                          "bash",
+                        ][currentExample]}
                       </span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <button
                         onClick={() =>
-                          setCurrentExample((prev) => (prev - 1 + codeExamples.length) % codeExamples.length)
+                          setCurrentExample((prev) => (prev - 1 + 6) % 6)
                         }
                         className="p-2 hover:bg-gray-800 rounded-lg transition-colors duration-200 disabled:opacity-50"
                         disabled={currentExample === 0}
@@ -501,9 +588,9 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                         <ChevronLeft className="w-4 h-4 text-gray-400" />
                       </button>
                       <button
-                        onClick={() => setCurrentExample((prev) => (prev + 1) % codeExamples.length)}
+                        onClick={() => setCurrentExample((prev) => (prev + 1) % 6)}
                         className="p-2 hover:bg-gray-800 rounded-lg transition-colors duration-200 disabled:opacity-50"
-                        disabled={currentExample === codeExamples.length - 1}
+                        disabled={currentExample === 5}
                       >
                         <ChevronRight className="w-4 h-4 text-gray-400" />
                       </button>
