@@ -183,7 +183,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
             </h1>
 
             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              AI-powered documentation that automatically generates summaries, explanations, examples, and more for your Python projects.
+              AI-powered Python plugin to enhance documentation with summaries, code explanations, examples, semantic search, automated example testing, and multilingual documentation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -246,29 +246,34 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Features</h2>
-            <p className="text-lg text-gray-400">AI-powered enhancements for professional Python documentation</p>
+            <p className="text-lg text-gray-400">Everything you need for next-level Python documentation</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Auto-Generated Summaries",
-                description: "Intelligently creates concise summaries for modules, classes, and functions using advanced AI models.",
+                description: "Summarize modules, classes, and functions with concise, AI-generated overviews.",
                 icon: <FileText className="w-5 h-5" />,
               },
               {
                 title: "Code Explanations",
-                description: "Converts complex code logic into plain-English explanations that anyone can understand.",
+                description: "Plain-English explanations of code logic for better understanding and onboarding.",
                 icon: <Book className="w-5 h-5" />,
               },
               {
                 title: "Semantic Search",
-                description: "Search your documentation using natural language queries like 'find data processing functions'.",
+                description: "Query documentation with natural language (e.g., 'find data processing functions').",
                 icon: <Search className="w-5 h-5" />,
               },
               {
+                title: "Auto-Generated Examples",
+                description: "Create working code examples from docstrings automatically.",
+                icon: <Code className="w-5 h-5" />,
+              },
+              {
                 title: "Automated Example Testing",
-                description: "Extracts code examples from docstrings, runs them automatically, and reports results in your docs.",
+                description: "Extracts and runs code examples from docstrings, reporting results in the docs.",
                 icon: <Zap className="w-5 h-5" />,
               },
               {
@@ -277,9 +282,19 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                 icon: <Users className="w-5 h-5" />,
               },
               {
-                title: "Privacy-First Local LLMs",
-                description: "Run everything locally with models like llama 3.2 or Ollama, no cloud required, complete privacy.",
+                title: "Local LLM Support",
+                description: "Privacy-first processing with local models (e.g., LLaMA 3.2, ctransformers backend).",
                 icon: <Package className="w-5 h-5" />,
+              },
+              {
+                title: "Integrations",
+                description: "Works with Sphinx, MkDocs, and Jupyter Notebooks for seamless documentation workflows.",
+                icon: <ExternalLink className="w-5 h-5" />,
+              },
+              {
+                title: "README Generation",
+                description: "Automatically generate a project-level README summarizing your module, classes, and functions.",
+                icon: <FileText className="w-5 h-5" />,
               },
             ].map((feature, index) => (
               <motion.div
@@ -311,6 +326,10 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Quick Start</h2>
             <p className="text-lg text-gray-400">Get up and running in minutes</p>
+            <div className="mt-4 text-base text-blue-300 font-medium">
+              <span>LLM Requirement:</span> PyDocEnhancer requires a real LLM provider and model.<br />
+              <span className="text-gray-300">Specify a valid provider (e.g., <code>local</code> for ctransformers/Ollama, or <code>openai</code> for OpenAI API) and a model (e.g., <code>ollama/llama3.2:latest</code>). Mock mode is not supported.</span>
+            </div>
           </div>
 
           {/* Modern Code Interface */}
@@ -341,7 +360,56 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
 
               {/* Tab Navigation */}
               <div className="flex space-x-1 bg-gray-900/50 rounded-lg p-1">
-                {codeExamples.map((example, index) => (
+                {[
+                  {
+                    title: "Install (Recommended)",
+                    description: "Install PyDocEnhancer with local LLM support (no C++ build tools required)",
+                    code: "pip install pydocenhancer[local]",
+                    language: "bash",
+                    key: "install-local",
+                    icon: <Package className="w-4 h-4" />,
+                  },
+                  {
+                    title: "Install (llama-cpp-python)",
+                    description: "Install with llama-cpp-python backend (requires C++ build tools on Windows)",
+                    code: "pip install pydocenhancer[llama]",
+                    language: "bash",
+                    key: "install-llama",
+                    icon: <Package className="w-4 h-4" />,
+                  },
+                  {
+                    title: "Python API Quick Start",
+                    description: "Generate docs, README, and search with the Python API",
+                    code: `from pydocenhancer import DocEnhancer\n\n# Initialize with a real LLM (Ollama or LLaMA)\nenhancer = DocEnhancer(provider=\"local\", model=\"ollama/llama3.2:latest\", language=\"en\")\nenhancer.generate_docs(module_path=\"my_project/utils.py\", output_dir=\"docs\", language=\"en\")\n\n# Generate a README for your project\nenhancer.generate_readme(module_path=\"my_project/utils.py\", output_path=\"README.generated.md\", language=\"en\")\n\n# Search documentation\nresults = enhancer.search_docs(\"file handling functions\", \"docs\")\nprint(results)`,
+                    language: "python",
+                    key: "python-api",
+                    icon: <Code className="w-4 h-4" />,
+                  },
+                  {
+                    title: "CLI: Generate Docs",
+                    description: "Generate documentation with Ollama in English, with example testing",
+                    code: "pydocenhancer enhance --module my_project/utils.py --output docs/ --provider local --model ollama/llama3.2:latest --language en",
+                    language: "bash",
+                    key: "cli-generate-docs",
+                    icon: <Terminal className="w-4 h-4" />,
+                  },
+                  {
+                    title: "CLI: Generate README",
+                    description: "Generate a project-level README from your codebase",
+                    code: "pydocenhancer generate-readme --module my_project/utils.py --output README.generated.md --provider local --model ollama/llama3.2:latest --language en",
+                    language: "bash",
+                    key: "cli-generate-readme",
+                    icon: <FileText className="w-4 h-4" />,
+                  },
+                  {
+                    title: "CLI: Search Docs",
+                    description: "Search documentation with natural language",
+                    code: "pydocenhancer search --query \"data processing functions\" --docs-dir docs/",
+                    language: "bash",
+                    key: "cli-search",
+                    icon: <Search className="w-4 h-4" />,
+                  },
+                ].map((example, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentExample(index)}
