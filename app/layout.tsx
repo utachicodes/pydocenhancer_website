@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PyDocEnhancer - Python Documentation Made Simple",
     description: "Automatically parse your Python code and generate beautiful, comprehensive documentation.",
-    url: "https://pydocenhancer.vercel.app",
+    url: "https://pydocenhancer.com",
     siteName: "PyDocEnhancer",
     locale: "en_US",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.dev'
+    generator: 'PyDocEnhancer Website'
 }
 
 export default function RootLayout({

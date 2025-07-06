@@ -154,7 +154,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                   className="border-gray-700 hover:border-gray-600 hover:bg-gray-800/50 transition-all duration-200 bg-transparent text-gray-300 hover:text-white"
                   asChild
                 >
-                  <a href="https://github.com/utachicodes/PyDocEnhancer" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/AbdoullahNdao/PyDocEnhancer" target="_blank" rel="noopener noreferrer">
                     <Github className="w-4 h-4 mr-2" />
                     GitHub
                   </a>
@@ -200,7 +200,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                 className="text-gray-400 hover:text-white px-8 py-3 text-base font-medium transition-colors duration-200"
                 asChild
               >
-                <a href="https://github.com/utachicodes/PyDocEnhancer#readme" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/AbdoullahNdao/PyDocEnhancer#readme" target="_blank" rel="noopener noreferrer">
                   Documentation
                 </a>
               </Button>
@@ -524,19 +524,19 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
               },
               {
                 name: "GitHub",
-                url: "https://github.com/utachicodes/PyDocEnhancer",
+                url: "https://github.com/AbdoullahNdao/PyDocEnhancer",
                 icon: Github,
                 desc: "Source Code",
               },
               {
                 name: "Documentation",
-                url: "https://github.com/utachicodes/PyDocEnhancer#readme",
+                url: "https://github.com/AbdoullahNdao/PyDocEnhancer#readme",
                 icon: Book,
                 desc: "README Guide",
               },
               {
                 name: "Support",
-                url: "mailto:your.email@example.com",
+                url: "mailto:abdoullahaljersi@gmail.com",
                 icon: ExternalLink,
                 desc: "Get Help",
               },
@@ -580,7 +580,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
             </span>
             <div className="flex items-center space-x-8 text-sm">
               <a
-                href="https://github.com/utachicodes/PyDocEnhancer"
+                href="https://github.com/AbdoullahNdao/PyDocEnhancer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gray-400 transition-colors duration-200"
@@ -588,7 +588,7 @@ pydocenhancer ./src --output ./docs --include-private --examples`,
                 GitHub
               </a>
               <a
-                href="https://github.com/utachicodes/PyDocEnhancer#readme"
+                href="https://github.com/AbdoullahNdao/PyDocEnhancer#readme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gray-400 transition-colors duration-200"
