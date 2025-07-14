@@ -1,6 +1,6 @@
 # PyDocEnhancer Website
 
-Welcome to the official website for **PyDocEnhancer** an AI-powered Python plugin that enhances your documentation with summaries, code explanations, examples, semantic search, automated example testing, and multilingual support.
+Welcome to the website for **PyDocEnhancer** an AI-powered Python plugin that enhances your documentation with summaries, code explanations, examples, semantic search, automated example testing, and multilingual support.
 
 ## What is PyDocEnhancer?
 PyDocEnhancer is a powerful tool designed to supercharge your Python documentation using the latest AI models. It provides:
